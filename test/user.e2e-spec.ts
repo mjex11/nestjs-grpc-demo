@@ -3,11 +3,9 @@ import { INestApplication } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { join } from 'path';
 
-import { GetUserRequest } from '../src/user/gen/user';
+import { UserRequest } from '../src/user/gen/user';
 import { UserController } from '../src/user/user.controller';
 import { UserModule } from '../src/user/user.module';
-
-jest.setTimeout(5000);
 
 describe('GRPC transport', () => {
   let app: INestApplication;
@@ -39,10 +37,9 @@ describe('GRPC transport', () => {
   });
 
   it('getUser', async () => {
-    const req: GetUserRequest = { id: '1' };
+    const req: UserRequest = { id: '1' };
     const res = app.get(UserController).getUser(req);
 
-    expect(res.name).toEqual('John');
+    expect(res.name).toEqual('itiro');
   });
-
 });

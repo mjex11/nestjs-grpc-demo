@@ -1,8 +1,8 @@
 import { Controller } from '@nestjs/common';
 
 import {
-  GetUserRequest,
-  GetUserResponse,
+  UserRequest,
+  UserResponse,
   UserServiceController,
   UserServiceControllerMethods,
 } from './gen/user';
@@ -13,7 +13,7 @@ import { UserService } from './user.service';
 export class UserController implements UserServiceController {
   constructor(private readonly userService: UserService) {}
 
-  getUser(request: GetUserRequest): GetUserResponse {
+  getUser(request: UserRequest): UserResponse {
     return this.userService.getUser(request);
   }
 }

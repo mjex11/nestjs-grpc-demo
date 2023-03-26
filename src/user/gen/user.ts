@@ -5,27 +5,24 @@ import { Observable } from "rxjs";
 
 export const protobufPackage = "user";
 
-export interface GetUserRequest {
+export interface UserRequest {
   id: string;
 }
 
-export interface GetUserResponse {
+export interface UserResponse {
   id: string;
   name: string;
-  email: string;
+  point: number;
 }
 
 export const USER_PACKAGE_NAME = "user";
 
 export interface UserServiceClient {
-  getUser(request: GetUserRequest, metadata?: Metadata): Observable<GetUserResponse>;
+  getUser(request: UserRequest, metadata?: Metadata): Observable<UserResponse>;
 }
 
 export interface UserServiceController {
-  getUser(
-    request: GetUserRequest,
-    metadata?: Metadata,
-  ): Promise<GetUserResponse> | Observable<GetUserResponse> | GetUserResponse;
+  getUser(request: UserRequest, metadata?: Metadata): Promise<UserResponse> | Observable<UserResponse> | UserResponse;
 }
 
 export function UserServiceControllerMethods() {

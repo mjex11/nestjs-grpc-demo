@@ -1,23 +1,23 @@
 import { Injectable } from '@nestjs/common';
 
-import { GetUserRequest, GetUserResponse } from './gen/user';
+import { UserRequest, UserResponse } from './gen/user';
 
 @Injectable()
 export class UserService {
-  private users: GetUserResponse[] = [
+  private users: UserResponse[] = [
     {
       id: '1',
-      name: 'John',
-      email: 'john.doe@example.com',
+      name: 'itiro',
+      point: 51,
     },
     {
       id: '2',
-      name: 'Doe',
-      email: 'jane.doe@example.com',
+      name: 'matsui',
+      point: 55,
     },
   ];
 
-  getUser(request: GetUserRequest): GetUserResponse {
+  getUser(request: UserRequest): UserResponse {
     return this.users.find((user) => user.id === request.id);
   }
 }
