@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 
-import { GetUserRequest, GetUserResponse } from './user';
+import { GetUserRequest, GetUserResponse } from './gen/user';
 
 @Injectable()
 export class UserService {

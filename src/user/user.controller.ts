@@ -5,7 +5,7 @@ import {
   GetUserResponse,
   UserServiceController,
   UserServiceControllerMethods,
-} from './user';
+} from './gen/user';
 import { UserService } from './user.service';
 
 @Controller()

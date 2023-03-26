@@ -3,7 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { join } from 'path';
 
-import { GetUserRequest } from '../src/user/user';
+import { GetUserRequest } from '../src/user/gen/user';
 import { UserController } from '../src/user/user.controller';
 import { UserModule } from '../src/user/user.module';
 
