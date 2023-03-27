@@ -25,7 +25,6 @@ describe('GRPC transport', () => {
           },
         ]),
       ],
-      //   controllers: [UserController],
     }).compile();
 
     app = moduleFixture.createNestApplication();
